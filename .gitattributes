@@ -1,0 +1,16 @@
+*.dll filter=lfs diff=lfs merge=lfs -text
+*.csproj filter=lfs diff=lfs merge=lfs -text
+*.csproj.user filter=lfs diff=lfs merge=lfs -text
+*.sln filter=lfs diff=lfs merge=lfs -text
+./CrossStitchApp/.vs/* filter=lfs diff=lfs merge=lfs -text
+./CrossStitchApp/bin/* filter=lfs diff=lfs merge=lfs -text
+./CrossStitchApp/obj/* filter=lfs diff=lfs merge=lfs -text
+./CrossStitchApp/packages/* filter=lfs diff=lfs merge=lfs -text
+./CrossStitchApp/Content/* filter=lfs diff=lfs merge=lfs -text
+./CrossStitchApp/App_Data/* filter=lfs diff=lfs merge=lfs -text
+./CrossStitchApp/App_Start/* filter=lfs diff=lfs merge=lfs -text
+./CrossStitchApp/Properties/* filter=lfs diff=lfs merge=lfs -text
+./CrossStitchApp/Scripts/* filter=lfs diff=lfs merge=lfs -text
+
+# images
+*.ico filter=lfs diff=lfs merge=lfs -text
