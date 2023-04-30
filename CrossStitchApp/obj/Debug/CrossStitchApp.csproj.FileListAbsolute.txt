@@ -71,3 +71,7 @@ E:\Projects\App\CrossStitchApp\obj\Debug\CrossStitchApp.csproj.CoreCompileInputs
 E:\Projects\App\CrossStitchApp\obj\Debug\CrossStitchApp.csproj.CopyComplete
 E:\Projects\App\CrossStitchApp\obj\Debug\CrossStitchApp.dll
 E:\Projects\App\CrossStitchApp\obj\Debug\CrossStitchApp.pdb
+E:\Projects\Repos\CrossStitchCreationApp\CrossStitchApp\obj\Debug\CrossStitchApp.csproj.AssemblyReference.cache
+E:\Projects\Repos\CrossStitchCreationApp\CrossStitchApp\obj\Debug\CrossStitchApp.csproj.CoreCompileInputs.cache
+E:\Projects\Repos\CrossStitchCreationApp\CrossStitchApp\obj\Debug\CrossStitchApp.dll
+E:\Projects\Repos\CrossStitchCreationApp\CrossStitchApp\obj\Debug\CrossStitchApp.pdb
