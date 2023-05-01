@@ -11,6 +11,12 @@
 ./CrossStitchApp/App_Start/* filter=lfs diff=lfs merge=lfs -text
 ./CrossStitchApp/Properties/* filter=lfs diff=lfs merge=lfs -text
 ./CrossStitchApp/Scripts/* filter=lfs diff=lfs merge=lfs -text
+*.dll.refresh filter=lfs diff=lfs merge=lfs -text
+*.xml filter=lfs diff=lfs merge=lfs -text
 
 # images
 *.ico filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.gif filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text

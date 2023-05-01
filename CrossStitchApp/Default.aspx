@@ -1,44 +1,76 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CrossStitchApp._Default" %>
 
+
+
+<asp:content contentplaceholderid="HeadContent" runat="server">  
+
+    <link rel="stylesheet" href="css/web_style.css" type="text/css" media="screen" />  
+
+</asp:content>
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <main>
-        <section class="row" aria-labelledby="aspnetTitle">
-            <h1 id="aspnetTitle">ASP.NET</h1>
-            <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-            <p><a href="http://www.asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-        </section>
-
+    <br>
+    <div class="container">
         <div class="row">
-            <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-                <h2 id="gettingStartedTitle">Getting started</h2>
-                <p>
-                    ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-                A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="librariesTitle">
-                <h2 id="librariesTitle">Get more libraries</h2>
-                <p>
-                    NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="hostingTitle">
-                <h2 id="hostingTitle">Web Hosting</h2>
-                <p>
-                    You can easily find a web hosting company that offers the right mix of features and price for your applications.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-                </p>
-            </section>
-        </div>
-    </main>
+            <div class="col-sm-2 imgUp">
+                <div class="imagePreview">
+                </div>
+                <label class="btn btn-primary">
+                    Upload
+                    <input type="file" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
+                </label>
+            </div><!-- col-2 -->
+            <i class="fa fa-plus imgAdd"></i>
+        </div><!-- row -->
+    </div><!-- container -->
+
+    <script>
+        $(".imgAdd").click(function()
+        {
+            $(this).closest(".row").find('.imgAdd').before(
+                `
+                    <div class="col-sm-2 imgUp">
+                        <div class="imagePreview"></div>
+
+                        <label class="btn btn-primary">
+                            Upload
+                            <input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;">
+                        </label>
+                        <i class="fa fa-times del"></i>
+                    </div>
+                `
+            );
+        });
+
+        $(document).on("click", "i.del" , function() {
+            $(this).parent().remove();
+        });
+
+        $(function() 
+        {
+            $(document).on("change",".uploadFile", function()
+            {
+                var uploadFile = $(this);
+                var files = !!this.files ? this.files : [];
+                if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+        
+                if (/^image/.test( files[0].type))
+                {
+                    // only image file
+                    var reader = new FileReader(); // instance of the FileReader
+                    reader.readAsDataURL(files[0]); // read the local file
+        
+                    reader.onloadend = function()
+                    {
+                        // set image data as background of div
+                        //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
+                        uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url("+this.result+")");
+                    }
+                }
+      
+            });
+        });
+    </script>
 
 </asp:Content>
